@@ -9,7 +9,9 @@ import axios from 'axios'
 import { AiOutlineEdit } from 'react-icons/ai';
 import { MdOutlineDelete } from 'react-icons/md';
 import BooksTable from '../components/home/BooksTable'
-import Bookscard from '../components/home/Bookscard'
+import BooksCard from '../components/home/BooksCard'
+
+
 
 
 const Home = () => {
@@ -58,7 +60,7 @@ const Home = () => {
 
       </div>
 {loading? <Spinner/> : showType === 'table' ? ( <BooksTable books={books} />) : (
-  <Bookscard books={books} />
+  <BooksCard books={books} />
   
 )}
     </div>
