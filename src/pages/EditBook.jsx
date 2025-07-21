@@ -18,7 +18,7 @@ const EditBook = () => {
   // 🧠 Load existing book data
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://localhost:5555/books/${id}`)
+    axios.get(`https://book-store-backend-myup.onrender.com/books/${id}`)
       .then((response) => {
         setTitle(response.data.title);
         setAuthor(response.data.author);
@@ -43,7 +43,7 @@ const EditBook = () => {
 
     setLoading(true);
 
-    axios.put(`http://localhost:5555/books/${id}`, updatedData)
+    axios.put(`https://book-store-backend-myup.onrender.com/books/${id}`, updatedData)
       .then((response) => {
         setLoading(false);
        // alert("Book updated successfully.");

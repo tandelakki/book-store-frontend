@@ -16,7 +16,7 @@ const DeleteBook = () => {
     if (confirmDelete) {
       setLoading(true);
 
-      axios.delete(`http://localhost:5555/books/${id}`)
+      axios.delete(`https://book-store-backend-myup.onrender.com/books/${id}`)
         .then(() => {
           setLoading(false);
           //alert("Book deleted successfully.");
