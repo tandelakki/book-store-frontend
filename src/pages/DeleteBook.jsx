@@ -4,6 +4,7 @@ import axios from 'axios';
 import Spinner from '../components/Spinner';
 import BackButton from '../components/BackButton';
 import { useSnackbar } from 'notistack';
+import BASE_URL from '../api';
 
 const DeleteBook = () => {
   const [loading, setLoading] = useState(false);
@@ -16,7 +17,7 @@ const DeleteBook = () => {
     if (confirmDelete) {
       setLoading(true);
 
-      axios.delete(`https://book-store-backend-myup.onrender.com/books/${id}`)
+      axios.delete(`${BASE_URL}/books/${id}`)
         .then(() => {
           setLoading(false);
           //alert("Book deleted successfully.");

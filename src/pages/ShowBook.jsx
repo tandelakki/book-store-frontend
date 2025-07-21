@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import Spinner from '../components/Spinner'
 import axios from 'axios'
+import BASE_URL from '../api'
 
 const ShowBook = () => {
 
@@ -14,7 +15,7 @@ const { id } = useParams()
 useEffect(() => {
   setLoading(true)
   axios
-    .get(`http://localhost:5555/books/${id}`)
+    .get(`${BASE_URL}/books/${id}`)
     .then((response) => {
       setBook(response.data);
       setLoading(false);

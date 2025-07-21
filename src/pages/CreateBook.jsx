@@ -5,6 +5,7 @@ import BackButton from '../components/BackButton';
 import axios from 'axios';
 import Spinner from '../components/Spinner';
 import { useSnackbar } from 'notistack';
+import BASE_URL from '../api';
 
 const CreateBook = () => {
 
@@ -27,7 +28,7 @@ const [title, setTitle] = useState('');
     }
     setLoading(true);
     
-    axios.post('https://book-store-backend-myup.onrender.com/books', data)
+    axios.post(`${BASE_URL}/books`, data)
       .then((response) => {
         console.log("Book saved successfully:", response.data);
         setLoading(false);

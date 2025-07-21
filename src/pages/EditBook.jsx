@@ -4,6 +4,7 @@ import axios from 'axios';
 import Spinner from '../components/Spinner';
 import BackButton from '../components/BackButton';
 import { useSnackbar } from 'notistack';
+import BASE_URL from '../api';
 
 const EditBook = () => {
   const [title, setTitle] = useState('');
@@ -43,7 +44,7 @@ const EditBook = () => {
 
     setLoading(true);
 
-    axios.put(`https://book-store-backend-myup.onrender.com/books/${id}`, updatedData)
+    axios.put(`${BASE_URL}/books/${id}`, updatedData)
       .then((response) => {
         setLoading(false);
        // alert("Book updated successfully.");

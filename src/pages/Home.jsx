@@ -10,6 +10,7 @@ import { AiOutlineEdit } from 'react-icons/ai';
 import { MdOutlineDelete } from 'react-icons/md';
 import BooksTable from '../components/home/BooksTable'
 import BooksCard from '../components/home/BooksCard'
+import BASE_URL from '../api'
 
 
 
@@ -24,7 +25,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true)
     axios
-      .get("http://localhost:5555/books")
+      .get(`${BASE_URL}/books`)
       .then((response) => {
         setBooks(response.data.books);
         setLoading(false);
